@@ -203,24 +203,56 @@
                     "dest": "build"
                 },
                 {
+                    "only-arches": ["arm"],
+                    "type": "file",
+                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxarm-1.3.25.tar.bz2",
+                    "sha256": "3e4f2f1a7b00e50988f4c6c68f50b367da0fdbb9bc491ef0d361b7c52e8c74cb",
+                    "dest": "build"
+                },
+                {
+                    "only-arches": ["x86_64"],
                     "type": "file",
                     "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.3.25.tar.bz2",
                     "sha256": "0e632b3326eb5a74dc8363bf88c139ae6a7c21c10db18d047859f052c405c897",
                     "dest": "build"
                 },
                 {
+                    "only-arches": ["arm"],
+                    "type": "file",
+                    "url": "https://downloads.arduino.cc/tools/avr-gcc-4.9.2-atmel3.5.4-arduino2-armhf-pc-linux-gnu.tar.bz2",
+                    "sha256": "ee36009e19bd238d1f6351cbc9aa5db69714761f67dec4c1d69d5d5d7758720c",
+                    "dest": "build/linux"
+                },
+                {
+                    "only-arches": ["x86_64"],
                     "type": "file",
                     "url": "https://downloads.arduino.cc/tools/avr-gcc-4.9.2-atmel3.5.4-arduino2-x86_64-pc-linux-gnu.tar.bz2",
                     "sha256": "19480217f1524d78467b83cd742f503182bbcc76b5440093261f146828aa588c",
                     "dest": "build/linux"
                 },
                 {
+                    "only-arches": ["arm"],
+                    "type": "file",
+                    "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino9-armhf-pc-linux-gnu.tar.bz2",
+                    "sha256": "25a6834ae48019fccf37024236a1f79fe21760414292a4f3fa058d937ceee1ce",
+                    "dest": "build/linux"
+                },
+                {
+                    "only-arches": ["x86_64"],
                     "type": "file",
                     "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino9-x86_64-pc-linux-gnu.tar.bz2",
                     "sha256": "c8cccb84e2fe49ee837b24f0a60a99e9c371dae26e84c5b0b22b6b6aab2f1f6a",
                     "dest": "build/linux"
                 },
                 {
+                    "only-arches": ["arm"],
+                    "type": "file",
+                    "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.1.1-linux_arm.tar.bz2",
+                    "sha256": "e4880d83df3d3f6f4b7b7bcde161e80a0556877468803a3c6066ee4ad18a374c",
+                    "dest": "build/linux"
+                },
+                {
+                    "only-arches": ["x86_64"],
                     "type": "file",
                     "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.1.1-linux_amd64.tar.bz2",
                     "sha256": "eb5ad0a457dd7f610f7f9b85454399c36755673d61a16f9d07cdfcbbb32ec277",
