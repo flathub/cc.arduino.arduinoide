@@ -17,6 +17,7 @@
     "finish-args": [
         "--socket=x11",
         "--share=ipc",
+        "--share=network",
         "--device=all",
         "--filesystem=home"
     ],
