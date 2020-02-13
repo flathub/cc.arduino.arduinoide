@@ -62,8 +62,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.11/arduino-1.8.11.tar.xz",
-                    "sha256": "969ef35bd8390a06783a34ae20e9829e1660f20e7e0a1a42037f4b86deb64ea9"
+                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.12/arduino-1.8.12.tar.xz",
+                    "sha256": "4047371f95a17e8ad4c979f1e116c5fc13e8c7431a10c6e31671d876a7977861"
                 },
                 {
                     "type": "patch",
@@ -248,15 +248,15 @@
                 {
                     "only-arches": ["arm"],
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxarm-1.5.1.tar.bz2",
-                    "sha256": "f3d1b5ef469012ef604bdba0c1bdf6d403ca6488555bbfbaf125e8991d6e7ee2",
+                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxarm-1.5.2.tar.bz2",
+                    "sha256": "9cfb8647c392b5c2ef1e769dda88445ed74e939b1d0fb49b164b1ed06fd142ef",
                     "dest": "build"
                 },
                 {
                     "only-arches": ["x86_64"],
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.5.1.tar.bz2",
-                    "sha256": "f7cb9f737a34c33e8d825c5152642d3b6f515b3180dcb471373c00283034c00e",
+                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.5.2.tar.bz2",
+                    "sha256": "e39fe3cbd8f52cdec5ed72ee5f98db2326c0551e216bfb22c8692f2654cad773",
                     "dest": "build"
                 },
                 {
