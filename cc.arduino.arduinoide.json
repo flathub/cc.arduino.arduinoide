@@ -62,8 +62,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.12/arduino-1.8.12.tar.xz",
-                    "sha256": "4047371f95a17e8ad4c979f1e116c5fc13e8c7431a10c6e31671d876a7977861"
+                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.13/arduino-1.8.13.tar.xz",
+                    "sha256": "2b4423acf7a1ddf727de99b165a92bbf7981788dae121dfbcf97e3fad15e28c6"
                 },
                 {
                     "type": "patch",
@@ -89,8 +89,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/cores/avr-1.8.2.tar.bz2",
-                    "sha256": "6213d41c6e91a75ac931527da5b10f2dbe0140c8cc1dd41b06cd4e78b943f41b",
+                    "url": "https://downloads.arduino.cc/cores/avr-1.8.3.tar.bz2",
+                    "sha256": "de8a9b982477762d3d3e52fc2b682cdd8ff194dc3f1d46f4debdea6a01b33c14",
                     "dest": "build"
                 },
                 {
@@ -248,29 +248,29 @@
                 {
                     "only-arches": ["arm"],
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxarm-1.5.2.tar.bz2",
-                    "sha256": "9cfb8647c392b5c2ef1e769dda88445ed74e939b1d0fb49b164b1ed06fd142ef",
+                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxarm-1.5.4.tar.bz2",
+                    "sha256": "1315c3ed126b311d851f6daa8d923787afbd65e32572acf926e40917f13d35f4",
                     "dest": "build"
                 },
                 {
                     "only-arches": ["x86_64"],
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.5.2.tar.bz2",
-                    "sha256": "e39fe3cbd8f52cdec5ed72ee5f98db2326c0551e216bfb22c8692f2654cad773",
+                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.5.4.tar.bz2",
+                    "sha256": "fa28ddc7a49b02d9e07a87a53f7933821ee1a2ce357c698954f2fedf37e5fbb1",
                     "dest": "build"
                 },
                 {
                     "only-arches": ["arm"],
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino5-arm-linux-gnueabihf.tar.bz2",
-                    "sha256": "f4acd5531c6b82c715e2edfa0aadb13fb718b4095b3ea1aa1f7fbde680069639",
+                    "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino7-arm-linux-gnueabihf.tar.bz2",
+                    "sha256": "3903553d035da59e33cff9941b857c3cb379cb0638105dfdf69c97f0acc8e7b5",
                     "dest": "build/linux"
                 },
                 {
                     "only-arches": ["x86_64"],
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino5-x86_64-pc-linux-gnu.tar.bz2",
-                    "sha256": "3effed8ffa1978b6e4a46f1aa2acc629e440b4d77244f71f9b79a916025206fb",
+                    "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino7-x86_64-pc-linux-gnu.tar.bz2",
+                    "sha256": "bd8c37f6952a2130ac9ee32c53f6a660feb79bee8353c8e289eb60fdcefed91e",
                     "dest": "build/linux"
                 },
                 {
