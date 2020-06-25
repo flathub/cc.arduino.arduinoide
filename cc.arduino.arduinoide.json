@@ -348,7 +348,7 @@
                 {
                     "only-arches": ["aarch64"],
                     "type": "file",
-                    "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.3.0-linux_arm64.tar.bz2",
+                    "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.3.0-linux_aarch64.tar.bz2",
                     "sha256": "835ed8f37cffac37e979d1b0f6041559592d3d98be52f0e8611b76c4858e4113",
                     "dest": "build/linux"
                 },
