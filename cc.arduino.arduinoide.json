@@ -4,7 +4,7 @@
     "runtime-version": "19.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.openjdk11"
+        "org.freedesktop.Sdk.Extension.openjdk8"
     ],
     "rename-icon": "arduino",
     "build-options": {
@@ -33,7 +33,7 @@
             "name": "openjdk",
             "buildsystem": "simple",
             "build-commands": [
-                "/usr/lib/sdk/openjdk11/install.sh"
+                "/usr/lib/sdk/openjdk8/install.sh"
             ]
         },
         {
@@ -76,8 +76,8 @@
             "buildsystem": "simple",
             "build-options": {
                 "env": {
-                    "PATH": "/usr/bin:/usr/lib/sdk/openjdk11/jvm/openjdk-11/bin",
-                    "JAVA_HOME": "/usr/lib/sdk/openjdk11/jvm/openjdk-11"
+                    "PATH": "/usr/bin:/usr/lib/sdk/openjdk8/jvm/java-8-openjdk/bin",
+                    "JAVA_HOME": "/usr/lib/sdk/openjdk8/jvm/java-8-openjdk"
                 }
             },
             "build-commands": [
