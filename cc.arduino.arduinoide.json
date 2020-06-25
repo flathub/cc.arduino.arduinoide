@@ -265,6 +265,13 @@
                     "dest": "build"
                 },
                 {
+                    "only-arches": ["aarch64"],
+                    "type": "file",
+                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxaarch64-1.5.4.tar.bz2",
+                    "sha256": "d4d2e6cb70d1d3b0509a4bba2d171ae69366593a0bd235cb8f79d6cf6b286dab",
+                    "dest": "build"
+                },
+                {
                     "only-arches": ["arm"],
                     "type": "file",
                     "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxarm-1.5.4.tar.bz2",
@@ -277,6 +284,13 @@
                     "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.5.4.tar.bz2",
                     "sha256": "fa28ddc7a49b02d9e07a87a53f7933821ee1a2ce357c698954f2fedf37e5fbb1",
                     "dest": "build"
+                },
+                {
+                    "only-arches": ["aarch64"],
+                    "type": "file",
+                    "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino7-aarch64-pc-linux-gnu.tar.bz2",
+                    "sha256": "03d322b9df6da17289e9e7c6233c34a8535d9c645c19efc772ba19e56914f339",
+                    "dest": "build/linux"
                 },
                 {
                     "only-arches": ["arm"],
@@ -293,6 +307,13 @@
                     "dest": "build/linux"
                 },
                 {
+                    "only-arches": ["aarch64"],
+                    "type": "file",
+                    "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-aarch64-pc-linux-gnu.tar.bz2",
+                    "sha256": "6cf948f751acfe7b96684537f2291c766ec8b54b4f7dc95539864821456fa9fc",
+                    "dest": "build/linux"
+                },
+                {
                     "only-arches": ["arm"],
                     "type": "file",
                     "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-armhf-pc-linux-gnu.tar.bz2",
@@ -304,6 +325,13 @@
                     "type": "file",
                     "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-x86_64-pc-linux-gnu.tar.bz2",
                     "sha256": "accdfb920af2aabf4f7461d2ac73c0751760f525216dc4e7657427a78c60d13d",
+                    "dest": "build/linux"
+                },
+                {
+                    "only-arches": ["aarch64"],
+                    "type": "file",
+                    "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.3.0-linux_aarch64.tar.bz2",
+                    "sha256": "835ed8f37cffac37e979d1b0f6041559592d3d98be52f0e8611b76c4858e4113",
                     "dest": "build/linux"
                 },
                 {
