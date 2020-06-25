@@ -37,6 +37,41 @@
             ]
         },
         {
+            "name": "libusb",
+            "config-opts": [ "--disable-static", "--disable-udev" ],
+            "cleanup": [
+                "/lib/*.la",
+                "/lib/pkgconfig",
+                "/include"
+            ],
+            "sources": [
+                {
+                    "type":"archive",
+                    "url":"https://github.com/libusb/libusb/archive/v1.0.23.tar.gz",
+                    "sha256": "02620708c4eea7e736240a623b0b156650c39bfa93a14bcfa5f3e05270313eba"
+                }
+            ],
+            "post-install": [
+                "install -Dm644 COPYING /app/share/licenses/libusb/COPYING"
+            ]
+        },
+        {
+            "name": "usbutils",
+            "config-opts": [
+                "--datadir=/app/share/hwdata",
+                "--sbindir=/app/bin"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/gregkh/usbutils.git",
+                    "tag": "v012",
+                    "commit": "f3a05e2e368cf17f9882c8d358f2fa205eb1ead6"
+                }
+
+            ]
+        },
+        {
             "name": "arduino",
             "buildsystem": "simple",
             "build-options": {
