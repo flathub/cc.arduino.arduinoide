@@ -1,5 +1,6 @@
 {
     "app-id": "cc.arduino.arduinoide",
+    "command": "arduino",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "19.08",
     "sdk": "org.freedesktop.Sdk",
@@ -26,6 +27,7 @@
         "/lib/pkgconfig",
         "/share/aclocal",
         "/share/info",
+        "/bin/usbhid-dump",
         "/share/man"
     ],
     "modules": [
