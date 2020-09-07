@@ -2,7 +2,7 @@
     "app-id": "cc.arduino.arduinoide",
     "command": "arduino",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "19.08",
+    "runtime-version": "20.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.openjdk11"
@@ -120,7 +120,6 @@
                     "sha256": "a8a650774a613f6eaeae49e2b32f003e42b65be4adc479944b9d071b98214d41",
                     "dest": "build",
                     "dest-filename": "Ethernet-2.0.0.zip"
-                    
                 },
                 {
                     "type": "file",
