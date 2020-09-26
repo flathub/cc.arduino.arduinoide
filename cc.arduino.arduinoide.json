@@ -357,6 +357,6 @@
                 }
             ]
         },
-        "python3-serial.json"
+        "python3-pyserial.json"
     ]
 }
