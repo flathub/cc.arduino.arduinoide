@@ -350,6 +350,7 @@
                     "dest": "build/linux"
                 }
             ]
-        }
+        },
+        "python3-pyserial.json"
     ]
 }
