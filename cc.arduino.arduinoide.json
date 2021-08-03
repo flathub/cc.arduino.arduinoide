@@ -5,7 +5,7 @@
     "runtime-version": "20.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.openjdk11"
+        "org.freedesktop.Sdk.Extension.openjdk8"
     ],
     "rename-icon": "arduino",
     "build-options": {
@@ -35,7 +35,7 @@
             "name": "openjdk",
             "buildsystem": "simple",
             "build-commands": [
-                "/usr/lib/sdk/openjdk11/install.sh"
+                "/usr/lib/sdk/openjdk8/install.sh"
             ]
         },
         "shared-modules/libusb/libusb.json",
@@ -60,12 +60,12 @@
             "buildsystem": "simple",
             "build-options": {
                 "env": {
-                    "PATH": "/usr/bin:/usr/lib/sdk/openjdk11/bin",
-                    "JAVA_HOME": "/usr/lib/sdk/openjdk11/jvm/openjdk-11"
+                    "PATH": "/usr/bin:/usr/lib/sdk/openjdk8/bin",
+                    "JAVA_HOME": "/usr/lib/sdk/openjdk8/jvm/java-8-openjdk"
                 }
             },
             "build-commands": [
-                "ant --execdebug build",
+                "./ant/bin/ant --execdebug build",
                 "mkdir -p /app/bin /app/Arduino",
                 "cp -a linux/work/* /app/Arduino",
                 "ln -s /app/Arduino/arduino /app/bin",
@@ -83,8 +83,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.13/arduino-1.8.13.tar.xz",
-                    "sha256": "2b4423acf7a1ddf727de99b165a92bbf7981788dae121dfbcf97e3fad15e28c6"
+                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.15/arduino-1.8.15.tar.xz",
+                    "sha256": "2afb18a98652178e948f77720e9897e173d75735eb8f72e4071f13202ba2e938"
                 },
                 {
                     "type": "patch",
@@ -113,6 +113,13 @@
                     "url": "https://downloads.arduino.cc/cores/avr-1.8.3.tar.bz2",
                     "sha256": "de8a9b982477762d3d3e52fc2b682cdd8ff194dc3f1d46f4debdea6a01b33c14",
                     "dest": "build"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/arduino/arduino-examples/archive/1.9.1.zip",
+                    "sha256": "900c4885843c3f650b4f34308ba6d45d7117279de628d810c6ec17dd06213684",
+                    "dest": "build",
+                    "dest-filename": "arduino-examples-1.9.1.zip"
                 },
                 {
                     "type": "file",
@@ -228,10 +235,10 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/arduino-libraries/Servo/archive/1.1.6.zip",
-                    "sha256": "43cbb1196566ef5bb139506ef69312d93d5e26710679982072a315f93b4d33fd",
+                    "url": "https://github.com/arduino-libraries/Servo/archive/1.1.7.zip",
+                    "sha256": "c09185ed92ed292428177dd8a5b543a98aa91e2d4e41c3ef20a57498ea12b021",
                     "dest": "build",
-                    "dest-filename": "Servo-1.1.6.zip"
+                    "dest-filename": "Servo-1.1.7.zip"
                 },
                 {
                     "type": "file",
@@ -242,15 +249,15 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/Adafruit/Adafruit_CircuitPlayground/archive/1.10.4.zip",
-                    "sha256": "d49a9a1d9f24b753bc17187801b66f7824de32fe809f67c9e340ffde6ff98aa4",
+                    "url": "https://github.com/Adafruit/Adafruit_CircuitPlayground/archive/1.11.3.zip",
+                    "sha256": "60be19022f459e8fab1bf6c0763c675c88257d99db37a2a95c5a63db705fdcb4",
                     "dest": "build",
-                    "dest-filename": "Adafruit_Circuit_Playground-1.10.4.zip"
+                    "dest-filename": "Adafruit_Circuit_Playground-1.11.3.zip"
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.10.10/WiFi101-Updater-ArduinoIDE-Plugin-0.10.10.zip",
-                    "sha256": "0d70f3aa3cd7dc46cc402fc0a915519e7cf8af6cdc544458c182394d5fc3452f",
+                    "url": "https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.11.0/WiFi101-Updater-ArduinoIDE-Plugin-0.11.0.zip",
+                    "sha256": "68ad4ab4423d094b93e94710c07e1af09e9e08762b6ab994c702900787ca1b00",
                     "dest": "build/shared"
                 },
                 {
@@ -268,22 +275,15 @@
                 {
                     "only-arches": ["aarch64"],
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxaarch64-1.5.4.tar.bz2",
-                    "sha256": "d4d2e6cb70d1d3b0509a4bba2d171ae69366593a0bd235cb8f79d6cf6b286dab",
-                    "dest": "build"
-                },
-                {
-                    "only-arches": ["arm"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxarm-1.5.4.tar.bz2",
-                    "sha256": "1315c3ed126b311d851f6daa8d923787afbd65e32572acf926e40917f13d35f4",
+                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxaarch64-1.6.1.tar.bz2",
+                    "sha256": "04b70022f1add0e41f8cdf3b5b568ba4b01072185d147a01a893c27085b21f14",
                     "dest": "build"
                 },
                 {
                     "only-arches": ["x86_64"],
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.5.4.tar.bz2",
-                    "sha256": "fa28ddc7a49b02d9e07a87a53f7933821ee1a2ce357c698954f2fedf37e5fbb1",
+                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.6.1.tar.bz2",
+                    "sha256": "4141ee0beac4e6facc5fcf8191fbb0fb9f5441d2407a47a869977531c87b5171",
                     "dest": "build"
                 },
                 {
@@ -291,13 +291,6 @@
                     "type": "file",
                     "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino7-aarch64-pc-linux-gnu.tar.bz2",
                     "sha256": "03d322b9df6da17289e9e7c6233c34a8535d9c645c19efc772ba19e56914f339",
-                    "dest": "build/linux"
-                },
-                {
-                    "only-arches": ["arm"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino7-arm-linux-gnueabihf.tar.bz2",
-                    "sha256": "3903553d035da59e33cff9941b857c3cb379cb0638105dfdf69c97f0acc8e7b5",
                     "dest": "build/linux"
                 },
                 {
@@ -315,13 +308,6 @@
                     "dest": "build/linux"
                 },
                 {
-                    "only-arches": ["arm"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-armhf-pc-linux-gnu.tar.bz2",
-                    "sha256": "2a8e68c5d803aa6f902ef219f177ec3a4c28275d85cbe272962ad2cd374f50d1",
-                    "dest": "build/linux"
-                },
-                {
                     "only-arches": ["x86_64"],
                     "type": "file",
                     "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-x86_64-pc-linux-gnu.tar.bz2",
@@ -336,18 +322,17 @@
                     "dest": "build/linux"
                 },
                 {
-                    "only-arches": ["arm"],
-                    "type": "file",
-                    "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.3.0-linux_arm.tar.bz2",
-                    "sha256": "1888587409b56aef4ba0ab0e6703b3dccba7cc3a022756ba9b908247e5d5a656",
-                    "dest": "build/linux"
-                },
-                {
                     "only-arches": ["x86_64"],
                     "type": "file",
                     "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.3.0-linux_amd64.tar.bz2",
                     "sha256": "aa45ee2441ffc3a122daec5802941d1fa2ac47adf5c5c481b5e0daa4dc259ffa",
                     "dest": "build/linux"
+                },
+                {
+                    "type": "archive",
+                    "url": "https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.11-bin.tar.xz",
+                    "sha256": "baa049855cdecbefa62539555824058e52412e5ebe8f102e1db944cb762e06d9",
+                    "dest": "build/ant"
                 }
             ]
         },
