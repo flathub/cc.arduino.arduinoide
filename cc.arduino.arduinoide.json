@@ -83,8 +83,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.15/arduino-1.8.15.tar.xz",
-                    "sha256": "2afb18a98652178e948f77720e9897e173d75735eb8f72e4071f13202ba2e938"
+                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.16/arduino-1.8.16.tar.xz",
+                    "sha256": "ac2a4662fd4ce2ad878a897a08ffe546bf4d7e884686722adc1d30ffe379a901"
                 },
                 {
                     "type": "patch",
@@ -235,10 +235,10 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/arduino-libraries/Servo/archive/1.1.7.zip",
-                    "sha256": "c09185ed92ed292428177dd8a5b543a98aa91e2d4e41c3ef20a57498ea12b021",
+                    "url": "https://github.com/arduino-libraries/Servo/archive/1.1.8.zip",
+                    "sha256": "f267d1406fc721156f762440a633226fa9f510da8007adef1acc5eeafc2775e5",
                     "dest": "build",
-                    "dest-filename": "Servo-1.1.7.zip"
+                    "dest-filename": "Servo-1.1.8.zip"
                 },
                 {
                     "type": "file",
@@ -256,8 +256,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.11.0/WiFi101-Updater-ArduinoIDE-Plugin-0.11.0.zip",
-                    "sha256": "68ad4ab4423d094b93e94710c07e1af09e9e08762b6ab994c702900787ca1b00",
+                    "url": "https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.12.0/WiFi101-Updater-ArduinoIDE-Plugin-0.12.0.zip",
+                    "sha256": "e9133b4abfed9393d57a89e1cda6ba5af45acfeedabfe32149828f0229da3a48",
                     "dest": "build/shared"
                 },
                 {
