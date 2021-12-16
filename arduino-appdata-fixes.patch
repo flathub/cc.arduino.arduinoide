@@ -1,12 +1,9 @@
 --- a/build/linux/dist/appdata.xml
 +++ b/build/linux/dist/appdata.xml
-@@ -23,1 +23,17 @@
-+     <p>
-+        NOTE: This wrapper is not verified by, affiliated with, or supported by Arduino S.r.l. .
-+     </p>
+@@ -23,1 +23,14 @@
 +     <p>
 +        <strong>Please Read...</strong><br><br>
-+        It might happen that when you upload a sketch - after you have selected your board and the serial port -, you get an error Error opening serial port ... If you get this error, you need to set serial port permission.<br><br>
++        It might happen that when you upload a sketch - after you have selected your board and the serial port -, you get an error <i>Error opening serial port ...</i>. If you get this error, you need to set serial port permission.<br><br>
 +        Open Terminal and type:<br><br>
 +        <i>ls -l /dev/ttyACM*</i><br><br>
 +        you will get something like:<br><br>
