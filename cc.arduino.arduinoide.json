@@ -83,8 +83,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.16/arduino-1.8.16.tar.xz",
-                    "sha256": "ac2a4662fd4ce2ad878a897a08ffe546bf4d7e884686722adc1d30ffe379a901"
+                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.18/arduino-1.8.18.tar.xz",
+                    "sha256": "f2912075ac9702484fe523c8c47f8e9bac79e48b37361cef515732a3a3e384d5"
                 },
                 {
                     "type": "patch",
