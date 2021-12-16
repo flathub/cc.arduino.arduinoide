@@ -1,5 +1,24 @@
 --- a/build/linux/dist/appdata.xml
 +++ b/build/linux/dist/appdata.xml
+@@ -23,1 +23,17 @@
++     <p>
++        NOTE: This wrapper is not verified by, affiliated with, or supported by Arduino S.r.l. .
++     </p>
++     <p>
++        <strong>Please Read...</strong><br><br>
++        It might happen that when you upload a sketch - after you have selected your board and the serial port -, you get an error Error opening serial port ... If you get this error, you need to set serial port permission.<br><br>
++        Open Terminal and type:<br><br>
++        <i>ls -l /dev/ttyACM*</i><br><br>
++        you will get something like:<br><br>
++        <i>crw-rw---- 1 root dialout 188, 0 5 apr 23.01 ttyACM0</i>
++        The "0" at the end of ACM might be a different number, or multiple entries might be returned. The data we need is "dialout" (is the group owner of the file).<br><br>
++        Now we just need to add our user to the group:<br><br>
++        <i>sudo usermod -a -G dialout <username></i><br><br>
++        where <username> is your Linux user name.<br><br>
++        You will need to log out and log in again for this change to take effect.
++     </p>
+   </description>
+ 
 @@ -36,6 +36,12 @@
    <content_rating type="oars-1.1" />
  
