@@ -1,6 +1,6 @@
 --- a/build/linux/dist/appdata.xml
 +++ b/build/linux/dist/appdata.xml
-@@ -23,1 +23,14 @@
+@@ -23,1 +23,19 @@
 +     <p>
 +        <strong>Please Read...</strong><br><br>
 +        It might happen that when you upload a sketch - after you have selected your board and the serial port -, you get an error <i>Error opening serial port ...</i>. If you get this error, you need to set serial port permission.<br><br>
@@ -14,8 +14,15 @@
 +        where <username> is your Linux user name.<br><br>
 +        You will need to log out and log in again for this change to take effect.
 +     </p>
++     <h3>Changes in version 1.8.18</h3>
++     [ide]
++     <ul>
++        <li>Upgrade log4j to 2.16.0 - Extra hardening for CVE-2021-44228</li>
++     </ul>
    </description>
- 
+
+--- a/build/linux/dist/appdata.xml
++++ b/build/linux/dist/appdata.xml
 @@ -36,6 +36,12 @@
    <content_rating type="oars-1.1" />
  
