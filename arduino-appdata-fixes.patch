@@ -1,10 +1,16 @@
 --- a/build/linux/dist/appdata.xml
 +++ b/build/linux/dist/appdata.xml
-@@ -36,6 +36,13 @@
+@@ -36,6 +36,19 @@
    <content_rating type="oars-1.1" />
  
    <releases>
-+    <release date="2021-12-16" version="1.8.19"/>
++    <release date="2021-12-16" version="1.8.19">
++      <description>
++        <ul>
++          <li>Removed log4j from IDE. Fix CVE-2021-45105, CVE-2021-45046</li>
++        </ul>
++      </description>
++    </release>
 +    <release date="2021-12-16" version="1.8.18"/>
 +    <release date="2021-09-27" version="1.8.16"/>
 +    <release date="2021-05-14" version="1.8.15"/>
