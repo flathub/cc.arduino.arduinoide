@@ -84,7 +84,13 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/arduino/Arduino/releases/download/1.8.19/arduino-1.8.19.tar.xz",
-                    "sha256": "350c7e64a38d562c3c5b61e9b93d4d64455a2c71bd0773a5c593198b8efa578d"
+                    "sha256": "350c7e64a38d562c3c5b61e9b93d4d64455a2c71bd0773a5c593198b8efa578d",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 105,
+                        "version-pattern": "^([\\d.]+)$",
+                        "url-template": "https://github.com/arduino/Arduino/releases/download/$version/arduino-$version.tar.xz"
+                    }
                 },
                 {
                     "type": "patch",
