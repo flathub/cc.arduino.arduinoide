@@ -35,8 +35,8 @@
 	</screenshots>
     <url type="homepage">http://www.arduino.cc/</url>
     <url type="help">https://www.arduino.cc/en/Guide/HomePage</url>
-    <url type="bugtracker">https://github.com/arduino/Arduino/issues</url>
-    <url type="translate">https://github.com/arduino/Arduino/tree/master/arduino-core/src/processing/app/i18n</url>
+    <url type="bugtracker">https://github.com//arduino/arduino-ide/issues</url>
+    <url type="translate">https://github.com/arduino/arduino-ide/tree/master/arduino-core/src/processing/app/i18n</url>
     <url type="donation">https://www.arduino.cc/en/Main/Contribute</url>
 
     <update_contact>arduino.appdata.xml@mavit.org.uk</update_contact>
