@@ -55,7 +55,6 @@
             "name": "arduino-ide",
             "buildsystem": "simple",
             "build-commands": [
-                "ls /app/",
                 "install -D apply_extra /app/bin/apply_extra",
                 "install -D arduino-ide.sh /app/bin/arduino-ide",
                 "install -Dm644 cc.arduino.arduinoide.png /app/share/icons/hicolor/128x128/apps/cc.arduino.arduinoide.png",
