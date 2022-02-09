@@ -105,6 +105,7 @@
                 }
             ]
         },
+        "python3-pyserial.json",
         "shared-modules/libsecret/libsecret.json"
     ]
 }
