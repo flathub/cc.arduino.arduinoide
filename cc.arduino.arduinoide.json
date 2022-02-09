@@ -6,10 +6,14 @@
     "command": "arduino-ide",
     "finish-args": [
         "--socket=x11",
+        "--socket=wayland",
         "--share=ipc",
         "--share=network",
         "--device=all",
-        "--filesystem=home"
+        "--filesystem=home",
+        "--filesystem=xdg-run/keyring",
+        "--talk-name=org.freedesktop.secrets",
+        "--talk-name=org.freedesktop.Notifications"
     ],
     "modules": [
         "shared-modules/libusb/libusb.json",
@@ -27,6 +31,24 @@
                     "commit": "57fb18e59cce31a50a1ca62d1e192512c905ba00"
                 }
 
+            ]
+        },
+        {
+            "name": "git",
+            "make-args": [
+                "NO_TCLTK=1",
+                "INSTALL_SYMLINKS=1"
+            ],
+            "make-install-args": [
+                "NO_TCLTK=1",
+                "INSTALL_SYMLINKS=1"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.kernel.org/pub/software/scm/git/git-2.35.1.tar.gz",
+                    "sha256": "9845a37dd01f9faaa7d8aa2078399d3aea91b43819a5efea6e2877b0af09bd43"
+                }
             ]
         },
         {
