@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Arduino IDE
+Exec=arduino-ide
+Icon=cc.arduino.arduinoide
+Comment=Arduino IDE v2 on Flathub
+Terminal=false
+Type=Application
+Categories=Development;IDE;Java;
+StartupWMClass=jetbrains-studio

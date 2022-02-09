@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+	<id>cc.arduino.arduinoide.desktop</id>
+	<metadata_license>CC-BY-SA-3.0</metadata_license>
+	<project_license>AGPL-3.0</project_license>
+	<name>Arduino IDE</name>
+	<summary>Open-source electronics prototyping platform</summary>
+    <developer_name>Arduino LLC</developer_name>
+    <description>
+        <p>
+            Arduino is an open-source electronics prototyping platform based
+            on flexible, easy-to-use hardware and software.  It's intended for
+            artists, designers, hobbyists, and anyone interested in creating
+            interactive objects or environments.
+        </p>
+        <p>
+            Included is an integrated development environment that can be used
+            to develop and upload code to compatible microcontrollers.
+        </p>
+    </description>
+	<releases>
+		<release version="2.0.0-rc3" date="2021-12-22">
+            <description>
+                <ul>
+                    <li>https://github.com/arduino/arduino-ide/releases/tag/2.0.0-rc3</li>
+                </ul>
+            </description>
+        </release>
+	</releases>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://github.com/arduino/arduino-ide/raw/main/static/screenshot.png</image>
+			<caption>Image of Arduino IDE v2</caption>
+		</screenshot>
+	</screenshots>
+    <url type="homepage">http://www.arduino.cc/</url>
+    <url type="help">https://www.arduino.cc/en/Guide/HomePage</url>
+    <url type="bugtracker">https://github.com/arduino/Arduino/issues</url>
+    <url type="translate">https://github.com/arduino/Arduino/tree/master/arduino-core/src/processing/app/i18n</url>
+    <url type="donation">https://www.arduino.cc/en/Main/Contribute</url>
+
+    <update_contact>arduino.appdata.xml@mavit.org.uk</update_contact>
+    <content_rating type="oars-1.0" />
+</component>

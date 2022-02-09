@@ -1,20 +1,9 @@
 {
     "app-id": "cc.arduino.arduinoide",
-    "command": "arduino",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "21.08",
     "sdk": "org.freedesktop.Sdk",
-    "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.openjdk8"
-    ],
-    "rename-icon": "arduino",
-    "build-options": {
-        "cflags": "-O2 -g",
-        "cxxflags": "-O2 -g",
-        "env": {
-            "V": "1"
-        }
-    },
+    "command": "arduino-ide",
     "finish-args": [
         "--socket=x11",
         "--share=ipc",
@@ -22,22 +11,7 @@
         "--device=all",
         "--filesystem=home"
     ],
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share/aclocal",
-        "/share/info",
-        "/bin/usbhid-dump",
-        "/share/man"
-    ],
     "modules": [
-        {
-            "name": "openjdk",
-            "buildsystem": "simple",
-            "build-commands": [
-                "/usr/lib/sdk/openjdk8/install.sh"
-            ]
-        },
         "shared-modules/libusb/libusb.json",
         {
             "name": "usbutils",
@@ -56,292 +30,60 @@
             ]
         },
         {
-            "name": "arduino",
+            "name": "arduino-ide",
             "buildsystem": "simple",
-            "build-options": {
-                "env": {
-                    "PATH": "/usr/bin:/usr/lib/sdk/openjdk8/bin",
-                    "JAVA_HOME": "/usr/lib/sdk/openjdk8/jvm/java-8-openjdk"
-                }
-            },
             "build-commands": [
-                "./ant/bin/ant --execdebug build",
-                "mkdir -p /app/bin /app/Arduino",
-                "cp -a linux/work/* /app/Arduino",
-                "ln -s /app/Arduino/arduino /app/bin",
-                "ln -s /app/jre /app/Arduino",
-                "mv /app/Arduino/jre /app/Arduino/java",
-                "mkdir -p /app/share/icons/hicolor",
-                "cp -a /app/Arduino/lib/icons/* /app/share/icons/hicolor",
-                "install -Dp -m 0644 /app/Arduino/lib/desktop.template /app/share/applications/cc.arduino.arduinoide.desktop",
-                "desktop-file-edit --set-key=\"Exec\" --set-value=\"arduino %F\" /app/share/applications/${FLATPAK_ID}.desktop",
-                "desktop-file-edit --set-icon=\"cc.arduino.arduinoide\" /app/share/applications/cc.arduino.arduinoide.desktop",
-                "install -Dp -m 0644 /app/Arduino/lib/appdata.xml /app/share/metainfo/cc.arduino.arduinoide.appdata.xml",
-                "install -Dp -m 0644 /app/Arduino/lib/arduino-arduinoide.xml /app/share/mime/packages/cc.arduino.arduinoide.xml"
+                "ls /app/",
+                "install -D apply_extra /app/bin/apply_extra",
+                "install -D arduino-ide.sh /app/bin/arduino-ide",
+                "install -Dm644 cc.arduino.arduinoide.png /app/share/icons/hicolor/128x128/apps/cc.arduino.arduinoide.png",
+                "install -Dm644 cc.arduino.arduinoide.appdata.xml /app/share/appdata/cc.arduino.arduinoide.appdata.xml",
+                "install -Dm644 cc.arduino.arduinoide.desktop /app/share/applications/cc.arduino.arduinoide.desktop"
             ],
-            "subdir": "build",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/arduino/Arduino/releases/download/1.8.19/arduino-1.8.19.tar.xz",
-                    "sha256": "350c7e64a38d562c3c5b61e9b93d4d64455a2c71bd0773a5c593198b8efa578d",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 105,
-                        "version-pattern": "^([\\d.]+)$",
-                        "url-template": "https://github.com/arduino/Arduino/releases/download/$version/arduino-$version.tar.xz"
-                    }
-                },
-                {
-                    "type": "patch",
-                    "path": "arduino-appdata-fixes.patch"
+                    "type": "file",
+                    "path": "cc.arduino.arduinoide.desktop"
                 },
                 {
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/reference-1.6.6-3.zip",
-                    "sha256": "c3bfb7f9b408fd99a4a1c0f3b022f0a8b10abae6dc28e35d38b4a0df62903685",
-                    "dest": "build/shared"
+                    "path": "cc.arduino.arduinoide.appdata.xml"
                 },
                 {
                     "type": "file",
-                    "url": "https://downloads.arduino.cc/Galileo_help_files-1.6.2.zip",
-                    "sha256": "1c70276e4783286d59c8ac0132c3286e7dcf6825bea65e25747a94416b07aa61",
-                    "dest": "build/shared"
+                    "path": "cc.arduino.arduinoide.png"
                 },
                 {
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/Edison_help_files-1.6.2.zip",
-                    "sha256": "56718ce5b2b090d79dae298f6ff9a09c8c1a77f74e3594a951f7035877cc45f4",
-                    "dest": "build/shared"
+                    "type": "extra-data",
+                    "filename": "arduino-ide.zip",
+                    "size": 362856480,
+                    "only-arches": [
+                        "x86_64"
+                    ],
+                    "url": "https://github.com/arduino/arduino-ide/releases/download/2.0.0-rc3/arduino-ide_2.0.0-rc3_Linux_64bit.zip",
+                    "sha256": "835e69c76fb1d093f1d72f8fe2ea92c1b8cb34a37702de174f85eee4865f78a4"
                 },
                 {
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/cores/avr-1.8.3.tar.bz2",
-                    "sha256": "de8a9b982477762d3d3e52fc2b682cdd8ff194dc3f1d46f4debdea6a01b33c14",
-                    "dest": "build"
+                    "type": "script",
+                    "dest-filename": "apply_extra",
+                    "commands": [
+                        "unzip /app/extra/arduino-ide.zip",
+                        "rm -f /app/extra/arduino-ide.zip",
+                        "mv /app/extra/arduino-ide_2.0.0-rc3_Linux_64bit /app/extra/arduino-ide",
+                        "chmod 4755 /app/extra/arduino-ide/chrome-sandbox",
+                        "chmod +x /app/extra/arduino-ide/arduino-ide"
+                    ]
                 },
                 {
-                    "type": "file",
-                    "url": "https://github.com/arduino/arduino-examples/archive/1.9.1.zip",
-                    "sha256": "900c4885843c3f650b4f34308ba6d45d7117279de628d810c6ec17dd06213684",
-                    "dest": "build",
-                    "dest-filename": "arduino-examples-1.9.1.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Ethernet/archive/2.0.0.zip",
-                    "sha256": "a8a650774a613f6eaeae49e2b32f003e42b65be4adc479944b9d071b98214d41",
-                    "dest": "build",
-                    "dest-filename": "Ethernet-2.0.0.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/GSM/archive/1.0.6.zip",
-                    "sha256": "737187d301a6d6eade181488106d3826f6466a926f570fa1d5dfb303729fb1ce",
-                    "dest": "build",
-                    "dest-filename": "GSM-1.0.6.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Stepper/archive/1.1.3.zip",
-                    "sha256": "9bdc308d1b4a0bafde01123c80aa25458bc6bd22609fd3d13f50ae0aeb32dbcf",
-                    "dest": "build",
-                    "dest-filename": "Stepper-1.1.3.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/TFT/archive/1.0.6.zip",
-                    "sha256": "bcc8e2a0ec6add55ca13ccca801331c3c090f3d4c46fd0b34545ed0cc7edc9b4",
-                    "dest": "build",
-                    "dest-filename": "TFT-1.0.6.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/WiFi/archive/1.2.7.zip",
-                    "sha256": "c61d68237742a39b7d5843496749e123c6721083bd002bcbdd118a630416b2ba",
-                    "dest": "build",
-                    "dest-filename": "WiFi-1.2.7.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/firmata/arduino/archive/2.5.8.zip",
-                    "sha256": "429cdb6f0a4c6b8cadb2d3a3ecb6a50cb083833454332827f67abac26dc6b44a",
-                    "dest": "build",
-                    "dest-filename": "Firmata-2.5.8.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Bridge/archive/1.7.0.zip",
-                    "sha256": "4823cca4e0a60311c0a5bb75a8bced780a99987ccd86f91926559e23ab58f6e2",
-                    "dest": "build",
-                    "dest-filename": "Bridge-1.7.0.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Robot_Control/archive/1.0.4.zip",
-                    "sha256": "077f70f2672c75b8c9c75bf4623db4025407d7e43b9cd281a1088e0e5f5e6ade",
-                    "dest": "build",
-                    "dest-filename": "Robot_Control-1.0.4.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Robot_Motor/archive/1.0.3.zip",
-                    "sha256": "7cf64dc179931da6104f136e78283310940d53f10151f27583599ef36acc7bde",
-                    "dest": "build",
-                    "dest-filename": "Robot_Motor-1.0.3.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/RobotIRremote/archive/2.0.0.zip",
-                    "sha256": "06c5dc9b28e0b12003944b16914f9e8fc8a9c31a078269181f174972aeaaba48",
-                    "dest": "build",
-                    "dest-filename": "RobotIRremote-2.0.0.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/SpacebrewYun/archive/1.0.2.zip",
-                    "sha256": "48cf66b677dc1ce03643a6bdd222f9be6d86081c29d6dda870108bd075ad1ab5",
-                    "dest": "build",
-                    "dest-filename": "SpacebrewYun-1.0.2.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Temboo/archive/1.2.1.zip",
-                    "sha256": "1dd15dc3a0ea5eaa6f9a9ddcfc2d22f40b4a15736bd585b59257b2a56174dfbb",
-                    "dest": "build",
-                    "dest-filename": "Temboo-1.2.1.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Esplora/archive/1.0.4.zip",
-                    "sha256": "44d9dd32ff15cf6a7aa48ade99fce890501cf09b931bdbad080338345e76d4b5",
-                    "dest": "build",
-                    "dest-filename": "Esplora-1.0.4.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Mouse/archive/1.0.1.zip",
-                    "sha256": "f9faf86c9c51c398aa531cb47d9613bc48ba34ae6af3a992ceb4b8fb3b96d280",
-                    "dest": "build",
-                    "dest-filename": "Mouse-1.0.1.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Keyboard/archive/1.0.2.zip",
-                    "sha256": "a34c261f4746d658647e5632e4bae8641d8055ed354f820f5aeec4904b92ce9f",
-                    "dest": "build",
-                    "dest-filename": "Keyboard-1.0.2.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/SD/archive/1.2.4.zip",
-                    "sha256": "df0d17e201600fcdcf2ae9bbd76d2919125d9afc1c73934cd799619bfa4d6f88",
-                    "dest": "build",
-                    "dest-filename": "SD-1.2.4.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/Servo/archive/1.1.8.zip",
-                    "sha256": "f267d1406fc721156f762440a633226fa9f510da8007adef1acc5eeafc2775e5",
-                    "dest": "build",
-                    "dest-filename": "Servo-1.1.8.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/LiquidCrystal/archive/1.0.7.zip",
-                    "sha256": "36f513107a565655766647657252f43407755abb6709156492d9133b3ece3df3",
-                    "dest": "build",
-                    "dest-filename": "LiquidCrystal-1.0.7.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/Adafruit/Adafruit_CircuitPlayground/archive/1.11.3.zip",
-                    "sha256": "60be19022f459e8fab1bf6c0763c675c88257d99db37a2a95c5a63db705fdcb4",
-                    "dest": "build",
-                    "dest-filename": "Adafruit_Circuit_Playground-1.11.3.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.12.0/WiFi101-Updater-ArduinoIDE-Plugin-0.12.0.zip",
-                    "sha256": "e9133b4abfed9393d57a89e1cda6ba5af45acfeedabfe32149828f0229da3a48",
-                    "dest": "build/shared"
-                },
-                {
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/libastylej-2.05.1-5.zip",
-                    "sha256": "def22874099c28d482720ee2a444ec4709f0980bae41f3ebb6033bbc79beb486",
-                    "dest": "build"
-                },
-                {
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/liblistSerials/liblistSerials-1.4.2-2.zip",
-                    "sha256": "a338d470822de19bd971bd7a71d43f5273ba082baa9236be28c44b47c3e51f6b",
-                    "dest": "build"
-                },
-                {
-                    "only-arches": ["aarch64"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linuxaarch64-1.6.1.tar.bz2",
-                    "sha256": "04b70022f1add0e41f8cdf3b5b568ba4b01072185d147a01a893c27085b21f14",
-                    "dest": "build"
-                },
-                {
-                    "only-arches": ["x86_64"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/arduino-builder-linux64-1.6.1.tar.bz2",
-                    "sha256": "4141ee0beac4e6facc5fcf8191fbb0fb9f5441d2407a47a869977531c87b5171",
-                    "dest": "build"
-                },
-                {
-                    "only-arches": ["aarch64"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino7-aarch64-pc-linux-gnu.tar.bz2",
-                    "sha256": "03d322b9df6da17289e9e7c6233c34a8535d9c645c19efc772ba19e56914f339",
-                    "dest": "build/linux"
-                },
-                {
-                    "only-arches": ["x86_64"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/avr-gcc-7.3.0-atmel3.6.1-arduino7-x86_64-pc-linux-gnu.tar.bz2",
-                    "sha256": "bd8c37f6952a2130ac9ee32c53f6a660feb79bee8353c8e289eb60fdcefed91e",
-                    "dest": "build/linux"
-                },
-                {
-                    "only-arches": ["aarch64"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-aarch64-pc-linux-gnu.tar.bz2",
-                    "sha256": "6cf948f751acfe7b96684537f2291c766ec8b54b4f7dc95539864821456fa9fc",
-                    "dest": "build/linux"
-                },
-                {
-                    "only-arches": ["x86_64"],
-                    "type": "file",
-                    "url": "https://downloads.arduino.cc/tools/avrdude-6.3.0-arduino17-x86_64-pc-linux-gnu.tar.bz2",
-                    "sha256": "accdfb920af2aabf4f7461d2ac73c0751760f525216dc4e7657427a78c60d13d",
-                    "dest": "build/linux"
-                },
-                {
-                    "only-arches": ["aarch64"],
-                    "type": "file",
-                    "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.3.0-linux_aarch64.tar.bz2",
-                    "sha256": "835ed8f37cffac37e979d1b0f6041559592d3d98be52f0e8611b76c4858e4113",
-                    "dest": "build/linux"
-                },
-                {
-                    "only-arches": ["x86_64"],
-                    "type": "file",
-                    "url": "http://downloads.arduino.cc/tools/arduinoOTA-1.3.0-linux_amd64.tar.bz2",
-                    "sha256": "aa45ee2441ffc3a122daec5802941d1fa2ac47adf5c5c481b5e0daa4dc259ffa",
-                    "dest": "build/linux"
-                },
-                {
-                    "type": "archive",
-                    "url": "https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.11-bin.tar.xz",
-                    "sha256": "baa049855cdecbefa62539555824058e52412e5ebe8f102e1db944cb762e06d9",
-                    "dest": "build/ant"
+                    "type": "script",
+                    "dest-filename": "arduino-ide.sh",
+                    "commands": [
+                        "exec env \"PATH=$PATH:$EXTRA_PATH\" /app/extra/arduino-ide/arduino-ide --no-sandbox"
+                    ]
                 }
             ]
         },
-        "python3-pyserial.json"
+        "python3-pyserial.json",
+        "shared-modules/libsecret/libsecret.json"
     ]
 }
