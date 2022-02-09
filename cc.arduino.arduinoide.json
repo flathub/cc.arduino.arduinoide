@@ -90,7 +90,7 @@
                     "commands": [
                         "unzip /app/extra/arduino-ide.zip",
                         "rm -f /app/extra/arduino-ide.zip",
-                        "mv /app/extra/arduino-ide_2.0.0-rc3_Linux_64bit /app/extra/arduino-ide",
+                        "mv /app/extra/arduino-ide* /app/extra/arduino-ide",
                         "chmod 4755 /app/extra/arduino-ide/chrome-sandbox",
                         "chmod +x /app/extra/arduino-ide/arduino-ide"
                     ]
