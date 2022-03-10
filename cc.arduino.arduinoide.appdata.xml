@@ -19,20 +19,27 @@
         </p>
     </description>
 	<releases>
+		<release version="2.0.0-rc5" date="2022-03-10">
+			<description>
+                		<ul>
+					<li>Updated to version 2 release candidate 5. github.com/arduino/arduino-ide/releases/tag/2.0.0-rc5</li>
+                		</ul>
+			</description>
+		</release>
 		<release version="2.0.0-rc4" date="2022-03-02">
 			<description>
                 		<ul>
 					<li>Updated to version 2 release candidate 4. github.com/arduino/arduino-ide/releases/tag/2.0.0-rc4</li>
                 		</ul>
 			</description>
-        	</release>
+		</release>
 		<release version="2.0.0-rc3" date="2021-12-22">
 			<description>
                 		<ul>
 					<li>Updated to version 2 release candidate 3. github.com/arduino/arduino-ide/releases/tag/2.0.0-rc3</li>
                 		</ul>
 			</description>
-        	</release>
+		</release>
 	</releases>
 	<screenshots>
 		<screenshot type="default">
