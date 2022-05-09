@@ -1,13 +1,17 @@
 {
     "app-id": "cc.arduino.arduinoide",
+    "base": "org.electronjs.Electron2.BaseApp",
+    "base-version": "21.08",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "21.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "arduino-ide",
+    "separate-locales": false,
     "finish-args": [
         "--socket=x11",
         "--socket=wayland",
         "--socket=system-bus",
+        "--socket=pulseaudio",
         "--share=ipc",
         "--share=network",
         "--device=all",
@@ -16,6 +20,7 @@
         "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.freedesktop.Notifications"
     ],
+
     "modules": [
         "shared-modules/libusb/libusb.json",
         "python3-pyserial.json",
@@ -49,8 +54,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.kernel.org/pub/software/scm/git/git-2.35.1.tar.gz",
-                    "sha256": "9845a37dd01f9faaa7d8aa2078399d3aea91b43819a5efea6e2877b0af09bd43"
+                    "url": "https://www.kernel.org/pub/software/scm/git/git-2.36.1.tar.gz",
+                    "sha256": "37d936fd17c81aa9ddd3dba4e56e88a45fa534ad0ba946454e8ce818760c6a2c"
                 }
             ]
         },
@@ -65,6 +70,10 @@
                 "install -Dm644 cc.arduino.arduinoide.desktop /app/share/applications/cc.arduino.arduinoide.desktop"
             ],
             "sources": [
+                {
+                    "type": "file",
+                    "path": "arduino-ide.sh"
+                },
                 {
                     "type": "file",
                     "path": "cc.arduino.arduinoide.desktop"
@@ -86,13 +95,6 @@
                     ],
                     "url": "https://github.com/arduino/arduino-ide/releases/download/2.0.0-rc6/arduino-ide_2.0.0-rc6_Linux_64bit.zip",
                     "sha256": "6c4a60d18d30895fe0de6872ca89b5404bf1a2874e32bf3d958a9e6a934e824f"
-                },
-                {
-                    "type": "script",
-                    "dest-filename": "arduino-ide.sh",
-                    "commands": [
-                        "exec /app/arduino-ide/arduino-ide --no-sandbox \"$@\""
-                    ]
                 }
             ]
         }
