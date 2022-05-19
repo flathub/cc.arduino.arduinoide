@@ -6,4 +6,3 @@ Comment=Arduino IDE v2 on Flathub
 Terminal=false
 Type=Application
 Categories=Development;IDE;Electronics;
-StartupWMClass=jetbrains-studio
