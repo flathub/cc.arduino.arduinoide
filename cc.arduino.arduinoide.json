@@ -1,7 +1,5 @@
 {
     "app-id": "cc.arduino.arduinoide",
-    "base": "org.electronjs.Electron2.BaseApp",
-    "base-version": "21.08",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "21.08",
     "sdk": "org.freedesktop.Sdk",
@@ -95,6 +93,20 @@
                     ],
                     "url": "https://github.com/arduino/arduino-ide/releases/download/2.0.0-rc6/arduino-ide_2.0.0-rc6_Linux_64bit.zip",
                     "sha256": "6c4a60d18d30895fe0de6872ca89b5404bf1a2874e32bf3d958a9e6a934e824f"
+                }
+            ]
+        },
+        {
+            "name": "zypak",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/refi64/zypak.git",
+                    "tag": "v2022.04",
+                    "commit": "55a60d110301e8dd37b631503c3524ab7baaf7aa",
+                    "x-checker-data": {
+                        "type": "git"
+                    }
                 }
             ]
         }
