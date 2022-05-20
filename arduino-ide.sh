@@ -8,6 +8,8 @@ then
 fi
 
 # I'm Unable to get this working just yet.
+#ELECTRON_RUN_AS_NODE=1
+#ZYPAK_SPAWN_LATEST_ON_REEXEC=0
 #env TMPDIR=$XDG_CACHE_HOME zypak-wrapper /app/arduino-ide/arduino-ide $FLAGS "$@"
 
 exec /app/arduino-ide/arduino-ide $FLAGS "$@"
