@@ -5,6 +5,9 @@
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "21.08",
     "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.node14"
+    ],
     "command": "arduino-ide",
     "separate-locales": false,
     "finish-args": [
@@ -20,6 +23,12 @@
         "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.freedesktop.Notifications"
     ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/node14/bin",
+        "env": {
+            "NPM_CONFIG_LOGLEVEL": "info"
+        }
+    },
 
     "modules": [
         "shared-modules/libusb/libusb.json",
@@ -62,8 +71,28 @@
         {
             "name": "arduino-ide",
             "buildsystem": "simple",
+            "build-options": {
+                "build-args": [
+                    "--share=network"
+                ],
+                "env": {
+                    "XDG_CACHE_HOME": "/run/build/arduino-ide/flatpak-node/cache",
+                    "npm_config_cache": "/run/build/arduino-ide/flatpak-node/npm-cache",
+                    "npm_config_nodedir": "/usr/lib/sdk/node14",
+                    "npm_config_no_save": "true",
+                    "npm_config_loglevel": "verbose",
+                    "npm_config_offline": "false",
+                    "YARN_DISABLE_SELF_UPDATE_CHECK": "true"
+                }
+            },
             "build-commands": [
-                "mv ./arduino-ide /app/arduino-ide",
+                "yarn --cwd ./build/arduino-ide-source/electron/packager/",
+                "yarn --cwd ./build/arduino-ide-source/electron/packager/ package",
+                "mv ./build/arduino-ide-source/electron/build/dist/*Linux_64bit.zip ./build/arduino-ide.zip",
+                "unzip ./build/arduino-ide.zip -d ./build/arduino-ide/",
+                "rm -f ./build/arduino-ide.zip",
+                "mv ./build/arduino-ide/ /app/arduino-ide/",
+                "rm -rf ./build/",
                 "install -D arduino-ide.sh /app/bin/arduino-ide",
                 "install -Dm644 cc.arduino.arduinoide.png /app/share/icons/hicolor/128x128/apps/cc.arduino.arduinoide.png",
                 "install -Dm644 cc.arduino.arduinoide.appdata.xml /app/share/appdata/cc.arduino.arduinoide.appdata.xml",
@@ -87,14 +116,10 @@
                     "path": "cc.arduino.arduinoide.png"
                 },
                 {
-                    "type": "archive",
-                    "dest-filename": "arduino-ide.zip",
-                    "dest": "arduino-ide",
-                    "only-arches": [
-                        "x86_64"
-                    ],
-                    "url": "https://github.com/arduino/arduino-ide/releases/download/2.0.0-rc6/arduino-ide_2.0.0-rc6_Linux_64bit.zip",
-                    "sha256": "6c4a60d18d30895fe0de6872ca89b5404bf1a2874e32bf3d958a9e6a934e824f"
+                    "type": "git",
+                    "url": "https://github.com/arduino/arduino-ide.git",
+                    "tag": "2.0.0-rc6",
+                    "dest": "build/arduino-ide-source"
                 }
             ]
         }
