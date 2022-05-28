@@ -161,20 +161,6 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/arduino-libraries/TFT/archive/1.0.6.zip",
-                    "sha256": "bcc8e2a0ec6add55ca13ccca801331c3c090f3d4c46fd0b34545ed0cc7edc9b4",
-                    "dest": "build",
-                    "dest-filename": "TFT-1.0.6.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/WiFi/archive/1.2.7.zip",
-                    "sha256": "c61d68237742a39b7d5843496749e123c6721083bd002bcbdd118a630416b2ba",
-                    "dest": "build",
-                    "dest-filename": "WiFi-1.2.7.zip"
-                },
-                {
-                    "type": "file",
                     "url": "https://github.com/firmata/arduino/archive/2.5.8.zip",
                     "sha256": "429cdb6f0a4c6b8cadb2d3a3ecb6a50cb083833454332827f67abac26dc6b44a",
                     "dest": "build",
@@ -200,13 +186,6 @@
                     "sha256": "7cf64dc179931da6104f136e78283310940d53f10151f27583599ef36acc7bde",
                     "dest": "build",
                     "dest-filename": "Robot_Motor-1.0.3.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/arduino-libraries/RobotIRremote/archive/2.0.0.zip",
-                    "sha256": "06c5dc9b28e0b12003944b16914f9e8fc8a9c31a078269181f174972aeaaba48",
-                    "dest": "build",
-                    "dest-filename": "RobotIRremote-2.0.0.zip"
                 },
                 {
                     "type": "file",
