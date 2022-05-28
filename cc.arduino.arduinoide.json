@@ -161,6 +161,13 @@
                 },
                 {
                     "type": "file",
+                    "url": "https://github.com/arduino-libraries/TFT/archive/1.0.6.zip",
+                    "sha256": "bcc8e2a0ec6add55ca13ccca801331c3c090f3d4c46fd0b34545ed0cc7edc9b4",
+                    "dest": "build",
+                    "dest-filename": "TFT-1.0.6.zip"
+                },
+                {
+                    "type": "file",
                     "url": "https://github.com/firmata/arduino/archive/2.5.8.zip",
                     "sha256": "429cdb6f0a4c6b8cadb2d3a3ecb6a50cb083833454332827f67abac26dc6b44a",
                     "dest": "build",
