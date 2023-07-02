@@ -353,6 +353,9 @@
                 }
             ]
         },
-        "python3-pyserial.json"
+        "python3-pyserial.json",
+        "python3-click.json",
+        "python3-ecdsa.json",
+        "python3-adafruit-nrfutil.json"
     ]
 }
