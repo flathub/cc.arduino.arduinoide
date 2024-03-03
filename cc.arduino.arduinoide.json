@@ -8,13 +8,6 @@
         "org.freedesktop.Sdk.Extension.openjdk8"
     ],
     "rename-icon": "arduino",
-    "build-options": {
-        "cflags": "-O2 -g",
-        "cxxflags": "-O2 -g",
-        "env": {
-            "V": "1"
-        }
-    },
     "finish-args": [
         "--socket=x11",
         "--share=ipc",
