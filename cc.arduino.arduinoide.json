@@ -98,7 +98,7 @@
                 },
                 {
                     "type": "patch",
-                    "path": "arduino-appdata-fixes.patch"
+                    "path": "patches/0001-appdata-Improvements-for-AppStream-1.0.patch"
                 },
                 {
                     "type": "file",
