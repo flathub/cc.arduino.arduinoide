@@ -2,7 +2,7 @@
     "app-id": "cc.arduino.arduinoide",
     "command": "arduino",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "24.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.openjdk8"
@@ -31,7 +31,6 @@
                 "/usr/lib/sdk/openjdk8/install.sh"
             ]
         },
-        "shared-modules/libusb/libusb.json",
         {
             "name": "libusb-compat",
             "config-opts": [ "--disable-static", "--disable-build-docs" ],
