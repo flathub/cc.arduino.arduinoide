@@ -31,7 +31,6 @@
                 "/usr/lib/sdk/openjdk8/install.sh"
             ]
         },
-        "shared-modules/libusb/libusb.json",
         {
             "name": "libusb-compat",
             "config-opts": [ "--disable-static", "--disable-build-docs" ],
