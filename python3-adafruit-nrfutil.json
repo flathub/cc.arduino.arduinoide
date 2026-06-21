@@ -2,7 +2,7 @@
     "name": "python3-adafruit-nrfutil",
     "buildsystem": "simple",
     "build-commands": [
-        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"adafruit-nrfutil\""
+        "pip3 install --exists-action=i --no-index --no-build-isolation --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"adafruit-nrfutil\""
     ],
     "sources": [
         {
